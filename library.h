@@ -1,6 +1,0 @@
-#ifndef LIBFTMESH_CPP_LIBRARY_H
-#define LIBFTMESH_CPP_LIBRARY_H
-
-void hello();
-
-#endif //LIBFTMESH_CPP_LIBRARY_H

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef LIBFTMESH_CPP_FTMESH_H
 #define LIBFTMESH_CPP_FTMESH_H
 

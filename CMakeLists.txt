@@ -9,4 +9,6 @@ set(Boost_USE_STATIC_RUNTIME OFF)
 
 find_package(Boost 1.71.0 REQUIRED)
 
-add_library(libftmesh_cpp ftmesh.cpp)
+add_library(libftmesh_cpp ftmesh.cpp
+        example/main.cpp
+        example/main.h)

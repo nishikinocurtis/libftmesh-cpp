@@ -71,4 +71,6 @@ private:
 
 }
 
+#define FTMESH_STATE_OBJ(X) class X : public ftmesh::Serializable
+
 #endif //LIBFTMESH_CPP_FTMESH_H

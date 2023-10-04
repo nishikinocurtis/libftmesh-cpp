@@ -11,8 +11,8 @@
 namespace ftmesh {
 
 typedef boost::dynamic_bitset<uint64_t> Bitmap;
-typedef boost::unordered_flat_map<std::uint64_t, std::size_t> PtrToPosMap;
-typedef boost::unordered_flat_map<std::size_t, std::uint64_t> PosToPtrMap;
+typedef boost::unordered_flat_map<uint64_t, std::size_t> PtrToPosMap;
+typedef boost::unordered_flat_map<std::size_t, uint64_t> PosToPtrMap;
 typedef boost::container::vector<std::string> StringVec;
 
 

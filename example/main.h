@@ -34,7 +34,7 @@ private:
 FTMESH_STATE_OBJ(ServerSessionState) {
 public:
     std::string serialize() override {
-        return "";
+        return std::format("server_name: {}", "\"test\"");
     }
 private:
     std::string _server_name;

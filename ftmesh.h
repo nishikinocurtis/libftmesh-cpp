@@ -35,6 +35,13 @@ public:
     static bool global_init(int32_t _capacity = 16384);
 
     /**
+     * register_object
+     * @param any_ptr void* - any address that need to be marked.
+     * @return uint - the new unique_id corresponding to the object (to be used further)
+     */
+     static uint register_object(void* any_ptr);
+
+    /**
      * set_update
      * @param any_ptr void* - any address that need to be marked.
      */
@@ -50,6 +57,7 @@ private:
     static std::shared_ptr<PtrToPosMap> _ptr_to_bit_pos_map;
     static std::shared_ptr<PosToPtrMap> _bit_pos_to_ptr_map;
     static bool _initialized;
+    static uint _global_counter;
 
     FTMeshManager() = default;
 };
@@ -68,6 +76,10 @@ private:
     }
 
 #define FTMESH_EXPORT_UPDATE FTMeshManager::export_update()
+
+#define FTMESH_REGISTER_SMART_PTR(X) FTMeshManager::register_object(X.get())
+
+#define FTMESH_REGISTER_PLAIN_PTR(X) FTMeshManager::register_object(X)
 
 }
 

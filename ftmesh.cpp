@@ -9,6 +9,7 @@ bool FTMeshManager::global_init(int32_t _capacity) {
         _updates_bitmap = std::make_shared<Bitmap>(_capacity);
         _ptr_to_bit_pos_map = std::make_shared<PtrToPosMap>();
         _bit_pos_to_ptr_map = std::make_shared<PosToPtrMap>();
+        _initialized = true;
         return true;
     }
     return false;

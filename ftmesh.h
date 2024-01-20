@@ -53,21 +53,21 @@ public:
     static std::shared_ptr<StringVec> export_update();
 
 private:
-    static std::shared_ptr<Bitmap> _updates_bitmap;
-    static std::shared_ptr<PtrToPosMap> _ptr_to_bit_pos_map;
-    static std::shared_ptr<PosToPtrMap> _bit_pos_to_ptr_map;
-    static bool _initialized;
-    static uint _global_counter;
+    inline static std::shared_ptr<Bitmap> _updates_bitmap;
+    inline static std::shared_ptr<PtrToPosMap> _ptr_to_bit_pos_map;
+    inline static std::shared_ptr<PosToPtrMap> _bit_pos_to_ptr_map;
+    inline static bool _initialized;
+    inline static uint _global_counter;
 
     FTMeshManager() = default;
 };
 
 #define FTMESH_MGR_INIT(X) \
-    { FTMeshManager::global_init(X); }
+    { ftmesh::FTMeshManager::global_init(X); }
 
 #define FTMESH_WRITE_SMART_PTR(X) \
     {                                \
-        FTMeshManager::set_update(static_cast<void*>(X.get())); \
+        ftmesh::FTMeshManager::set_update(static_cast<void*>(X.get())); \
     }
 
 #define FTMESH_WRITE_PLAIN_PTR(X) \
@@ -75,11 +75,11 @@ private:
         FTMeshManager::set_update(static_cast<void*>(X));  \
     }
 
-#define FTMESH_EXPORT_UPDATE FTMeshManager::export_update()
+#define FTMESH_EXPORT_UPDATE ftmesh::FTMeshManager::export_update()
 
-#define FTMESH_REGISTER_SMART_PTR(X) FTMeshManager::register_object(X.get())
+#define FTMESH_REGISTER_SMART_PTR(X) ftmesh::FTMeshManager::register_object(X.get())
 
-#define FTMESH_REGISTER_PLAIN_PTR(X) FTMeshManager::register_object(X)
+#define FTMESH_REGISTER_PLAIN_PTR(X) ftmesh::FTMeshManager::register_object(X)
 
 }
 
